@@ -60,7 +60,8 @@ textarea {
 }
 
 .home_container {
-  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -72,6 +73,7 @@ textarea {
   video {
     width: 100%;
     height: 100%;
+    min-height: 100dvh;
     @media screen and (max-width: 576px) {
       display: none;
     }
@@ -115,6 +117,8 @@ textarea {
       @media screen and (max-width: 576px) {
         width: 100vw;
         border-radius: 0;
+        min-height: 100dvh;
+        justify-content: center;
       }
       .logo {
         width: 100%;
