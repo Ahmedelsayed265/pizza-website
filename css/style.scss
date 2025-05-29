@@ -214,7 +214,6 @@ textarea {
 
 .branch_container {
   min-height: 100dvh;
-  margin-top: 80px;
   padding: 40px 0;
   background-image: url("../images/pattern1.png");
   background-repeat: repeat;
@@ -422,7 +421,7 @@ textarea {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -430,28 +429,58 @@ header {
   background: #fff;
   z-index: 1000;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+  @media screen and (max-width: 576px) {
+    height: unset;
+  }
 
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 576px) {
+      flex-wrap: wrap;
+    }
   }
 
   .logo {
     height: 76px;
     display: flex;
+    order: 1;
+
     img {
       height: 100%;
       object-fit: contain;
     }
   }
 
+  .download {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    order: 2;
+    @media screen and (max-width: 576px) {
+      order: 3;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 0;
+      margin-bottom: 12px;
+    }
+    img {
+      height: 36px;
+    }
+  }
+
   .login {
+    order: 3;
     background: #ec501c;
     border-radius: 100px;
     padding: 8px 32px;
     color: #fff;
     transition: all 0.3s ease-in-out;
+    @media screen and (max-width: 576px) {
+      order: 2;
+    }
     &:hover {
       background: #000000;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
@@ -462,15 +491,44 @@ header {
 footer {
   background: #000000;
   color: #fff;
-  padding: 32px 0;
+  padding: 24px 0;
   text-align: center;
   z-index: 1000;
   position: relative;
 
-  .container {
+  a {
+    color: #ffffffb3;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    @media screen and (max-width: 576px) {
+      gap: 16px;
+    }
+  }
+
+  .copy_follow {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 12px;
+    margin-top: 24px;
+    border-top: 1px solid #ffffff33;
+    @media screen and (max-width: 576px) {
+      flex-direction: column-reverse;
+      gap: 16px;
+      align-items: center;
+    }
   }
 
   .social {
